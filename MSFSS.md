@@ -1,5 +1,7 @@
 ## MSFSS: A Storage System for Mass Small Files
 
+原文链接：[http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4281592](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4281592)
+
 我们设计并实现了一个叫做MSFSS的用于存储和访问大量小文件的可扩展的灵活的分布式文件系统。MSFSS是构建在现有的常用文件系统之上的一个平台。它能够通过它们的访问模式将文件存放到最合适的文件系统上。为了防止中央瓶颈，它优化了元数据大小，将元数据操作从文件数据传输中分离，并实现了批量元数据操作。该系统提供数据迁移、热点文件缓存和副本机制，这些都是构建大规模可靠的存储系统的必要的特性。它已经成功地用于我们的web应用程序的存储系统，我们的web应用有大约50TB的小文件。实验结果表明，MSFSS在文件操作方面，可以提供高可扩展性和高吞吐量。
 
 # 1 介绍
