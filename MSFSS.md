@@ -15,7 +15,7 @@
 
 如图1，一个MSFSS集群由一个master，多个MDS服务器和若干个存储节SN点组成，它可以通过一个叫做FSI的客户端库进行访问。它们都是用户级进程，因此，只要机器资源允许，很容易将SN和MDS搭建在同一个机器上。
 
-![](http://github.com/luofengmacheng/translation/raw/master/pic/pic1.png)
+![](https://github.com/luofengmacheng/translation/raw/master/pic/pic1.png)
 
 MSFSS通过一个全局唯一的128位的文件ID（FID）来标识一个文件，这个ID是在文件创建时生成的。SN将文件存储在本地文件系统，然后通过FID和范围来读写文件数据。MSFSS支持文件副本机制，通过分布式业务来保证副本一致性，使用快速同步来恢复不一致的副本。而且，它还支持并发控制和块操作，比如数据迁移和数据拷贝。
 
@@ -45,7 +45,7 @@ MSFSS对应用程序隐藏了常用的文件系统，能够基于文件所要求
 
 前面已经提到，MSFSS中的每个文件都有一个全局唯一的FID。如下所示，它是一个128位的整数，每个域都可以支持MSFSS的扩展。
 
-![](http://github.com/luofengmacheng/translation/raw/master/pic/pic2.png)
+![](https://github.com/luofengmacheng/translation/raw/master/pic/pic2.png)
 
 UDID表示文件所在的分布单元ID，SEQ用于标识分布单元中的某个文件。为了简单起见，DUID和SEQ持续增长，MSFSS不会再使用之前已经分配的值。我们可以期望它们都足够大，MSFSS不会用完。比如，假如系统每秒产生一百万个文件，那么64位的SEQ可以用50万年。
 
